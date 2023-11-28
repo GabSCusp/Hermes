@@ -1,6 +1,7 @@
 from django.urls import path
-from pesquisa.views import HermesResultPage
+from pesquisa.views import resultados_pesquisa
+#from pesquisa.views import HermesResultPage
 
 urlpatterns = [
-    path('', HermesResultPage.as_view(), name="pesquisa"),
+    path('', resultados_pesquisa, name="pesquisa"),
 ]
