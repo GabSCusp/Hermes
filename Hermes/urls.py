@@ -6,5 +6,5 @@ urlpatterns = [
     path('pesquisa/',include('pesquisa.urls')),
     path('admin/', admin.site.urls),
     path('local/',include('local.urls')),
-    path('login/',include('user.urls')),
+    path('',include('user.urls')),
 ]

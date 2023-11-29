@@ -1,3 +1,8 @@
-from django.db import models
+from django.forms import Form
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.models import User
 
-# Create your models here.
+class RegistroForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'password1', 'password2']

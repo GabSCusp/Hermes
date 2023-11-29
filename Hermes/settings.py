@@ -118,3 +118,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# Configurações de autenticação
+LOGIN_REDIRECT_URL = ''  # Página para redirecionar após o login ('' para homepage)
+LOGOUT_REDIRECT_URL = ''  # Página para redirecionar após o logout ('' para homepage) 
