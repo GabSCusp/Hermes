@@ -49,25 +49,6 @@ h2{
     padding: 50px;
 }
 
-.texto{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.texto ul{
-    list-style: square;
-    padding: 45px;
-}
-
-.final_texto p{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 footer{
     display: flex;
     justify-content: center;
