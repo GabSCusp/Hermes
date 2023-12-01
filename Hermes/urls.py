@@ -7,5 +7,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('local/',include('local.urls')),
     path('',include('user.urls')),
-    path('', include('django.contrib.auth.urls')),
 ]

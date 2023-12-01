@@ -1,11 +1,7 @@
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView
-from django.contrib.auth import login, authenticate
-from user.models import RegistroForm
+from django.contrib.auth import login
+from user.forms import RegistroForm
 from django.contrib import messages
-
-class LoginPageView(TemplateView):
-     template_name = 'user/login.html'
 
 def Registrar(request):
     if request.method == 'POST':
