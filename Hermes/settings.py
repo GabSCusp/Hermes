@@ -120,5 +120,5 @@ STATICFILES_DIRS = [
 ]
 
 # Configurações de autenticação
-LOGIN_REDIRECT_URL = ''  # Página para redirecionar após o login ('' para homepage)
-LOGOUT_REDIRECT_URL = ''  # Página para redirecionar após o logout ('' para homepage) 
+LOGIN_REDIRECT_URL = '/'  # Página para redirecionar após o login ('' para homepage)
+LOGOUT_REDIRECT_URL = '/'  # Página para redirecionar após o logout ('' para homepage) 
