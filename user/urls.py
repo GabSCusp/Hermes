@@ -3,5 +3,5 @@ from django.urls import path, include
 
 urlpatterns = [
                path('registrar/', Registrar, name = 'registrar'),
-               path('accounts/', include('django.contrib.auth.urls')),
+               path('', include('django.contrib.auth.urls')),
 ]
