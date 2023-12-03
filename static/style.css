@@ -49,11 +49,33 @@ h2{
     padding: 50px;
 }
 
-footer{
+body{
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    padding: 170px;
-    padding-bottom: 0;
+    flex-direction: column;
+}
+
+footer{
+    margin-top: auto;
+    text-align: center;
+}
+
+/* Formulários */
+
+.form_pesquisa div{
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+}
+
+.form-login{
+    max-width: 300px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
 }
 
 .principal_pesquisa div{
@@ -62,11 +84,9 @@ footer{
     position: relative;
 }
 
-.form_pesquisa div{
-    position: relative;
-    z-index: 2;
-    display: inline-block;
-}
+/* ---------- */
+
+/* Imagens */
 
 .Hermes_logo{
     display: block;
@@ -86,6 +106,10 @@ footer{
     height: 300;
 }
 
+/* ---- */
+
+/* Botões */
+
 .cadbotao p{
     position: relative;
     z-index: 2;
@@ -93,16 +117,6 @@ footer{
 
 .recbotao p{
     position: relative;
-    z-index: 2;
-}
-
-form{
-    max-width: 300px;
-    margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     z-index: 2;
 }
 
@@ -115,7 +129,4 @@ button{
     cursor: pointer;
 }
 
-.profile_pic{
-    width:40; 
-    height: 40;
-}
+/* --- */

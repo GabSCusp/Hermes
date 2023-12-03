@@ -1,10 +1,25 @@
 <!-- TODO: inserir os vários campos necessários na página do perfil de usuário -->
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
 Perfil de usuário
 {% endblock title %}
 
 {% block content %}
-<a href="{% url 'logout' %}">Logout</a>
+
+<div class="user-info">
+    <img src="{% static 'profile.png' %}" width="40" height="40">
+    {{user.username}}
+</div>
+<div class="user-opt">
+    <!-- TODO: criar todas essas páginas e então corrigir os links -->
+    <ul>
+        <li><a href="{% url 'home' %}">Adicionar local</a></li>
+        <li><a href="{% url 'home' %}">Locais favoritos</a></li>
+        <li><a href="{% url 'home' %}">Fale conosco</a></li>
+        <a href="{% url 'logout' %}">Logout</a>
+    </ul>
+</div>
+
 {% endblock content %}
