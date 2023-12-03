@@ -49,28 +49,68 @@ h2{
     padding: 50px;
 }
 
-.texto{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.texto ul{
-    list-style: square;
-    padding: 45px;
-}
-
-.final_texto p{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 footer{
     display: flex;
     justify-content: center;
     padding: 170px;
     padding-bottom: 0;
+}
+
+.principal_pesquisa div{
+    text-align: center;
+    margin-top: 1px;
+    position: relative;
+}
+
+.form_pesquisa div{
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+}
+
+.Hermes_logo{
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    width: 300; 
+    height: 300;
+}
+
+.USP_logo{
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    width: 350; 
+    height: 300;
+}
+
+.cadbotao p{
+    position: relative;
+    z-index: 2;
+}
+
+.recbotao p{
+    position: relative;
+    z-index: 2;
+}
+
+form{
+    max-width: 300px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+
+button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
