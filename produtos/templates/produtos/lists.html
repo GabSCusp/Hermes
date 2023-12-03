@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Papelaria
+{% endblock title %}
+
+{% block content %}
+<h2>Listas de Produtos</h2>
+
+<section>
+    {% for list in list_list %}
+    <hr>
+    <article>
+        <header>
+            <h3>{{list.name}}  </h3>
+        </header>
+        <div class="lista-de-cards">
+            {% for produto in list.produtos.all %}
+            <div class="card">
+                <a href="{% url 'produtos:detail' produto.id %}">
+                    <img src="{{ produto.poster_url }}" alt="Poster do produto {{ produto.name}}">
+                </a>
+                <p>{{ produto.name }} - {{ produto.preço }} R$</p>
+                <p>{{ produto.Local }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </article>
+    {% endfor %}
+
+    
+</section>
+
+{% endblock content %}
