@@ -23,7 +23,7 @@
                 <li><a href="{%url 'home'%}">Histórico</a></li>
                 {% if user.is_authenticated %}
                 <a href="{% url 'perfil' %}">
-                    <span>Olá, {{user.username}}!</span>
+                    <span>Olá, {{user.username}} !</span>
                     <img src="{% static 'profile.png' %}" width="40" height="40">
                 </a>    
                 {% else %}

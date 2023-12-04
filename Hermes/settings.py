@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'pesquisa.apps.PesquisaConfig',
     'local.apps.LocalConfig',
     'user.apps.UserConfig',
+    'mensagens.apps.MensagensConfig',
 ]
 
 MIDDLEWARE = [
