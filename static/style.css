@@ -62,7 +62,7 @@ footer{
 
 /* Formulários */
 
-.form_pesquisa div{
+.form_login{
     position: relative;
     z-index: 2;
     display: inline-block;
@@ -78,7 +78,11 @@ footer{
     z-index: 2;
 }
 
-.principal_pesquisa div{
+.form-login p{
+    margin-bottom: 10px;
+}
+
+.principal_login{
     text-align: center;
     margin-top: 1px;
     position: relative;

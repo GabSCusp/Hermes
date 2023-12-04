@@ -6,9 +6,9 @@ Login de usuário
 {% endblock title %}
 
 {% block content %}
-<div class='principal_pesquisa'>
+<div class='principal_login'>
     <img class="USP_logo" src="{% static 'UspLogoPNG.png' %}" alt="Logo">
-    <div class="form_pesquisa">
+    <div class="form_login">
         <img class="Hermes_logo" src="{% static 'HermesHelmet.png' %}" alt="Logo">
         <form class="form-login" method="post" action="{% url 'login' %}">
             {% csrf_token %}
