@@ -5,6 +5,8 @@ from django.views.generic.base import View
 from user.forms import RegistroForm
 from django.contrib import messages
 
+from user.models import PerfilUsuario
+
 def Registrar(request):
     if request.method == 'POST':
         form = RegistroForm(request.POST)
@@ -24,3 +26,10 @@ class HermesLogOut(View):
     def get(self, request, *args, **kwargs):
         logout(request)
         return redirect(reverse('login'))
+
+def list_favoritos(request):
+    if request.user.is_authenticated:
+        perfil_usuario, created = PerfilUsuario.objects.get_or_create(user=request.user)
+        favoritos = perfil_usuario.favoritos.all()
+        return render(request, 'user/favoritos.html', {'favoritos':favoritos})
+    return redirect('login')
