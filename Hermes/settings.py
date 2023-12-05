@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'local.apps.LocalConfig',
     'user.apps.UserConfig',
     'mensagens.apps.MensagensConfig',
+    'produtos.apps.ProdutosConfig',
 ]
 
 MIDDLEWARE = [
@@ -109,7 +110,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+<<<<<<< HEAD
 STATIC_URL = 'static/'
+=======
+STATIC_URL = '/static/'
+>>>>>>> BancodeDadoseBarradePesquisafuncionando
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -121,5 +126,10 @@ STATICFILES_DIRS = [
 ]
 
 # Configurações de autenticação
+<<<<<<< HEAD
 LOGIN_REDIRECT_URL = '/'  # Página para redirecionar após o login ('' para homepage)
 LOGOUT_REDIRECT_URL = '/'  # Página para redirecionar após o logout ('' para homepage) 
+=======
+LOGIN_REDIRECT_URL = ''  # Página para redirecionar após o login ('' para homepage)
+LOGOUT_REDIRECT_URL = ''  # Página para redirecionar após o logout ('' para homepage) 
+>>>>>>> BancodeDadoseBarradePesquisafuncionando

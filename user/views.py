@@ -4,7 +4,6 @@ from django.contrib.auth import login, logout
 from django.views.generic.base import View
 from user.forms import RegistroForm
 from django.contrib import messages
-
 from user.models import PerfilUsuario
 
 def Registrar(request):
