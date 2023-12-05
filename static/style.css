@@ -182,18 +182,3 @@ button{
 .dados-de-produto ul {
     list-style-type: none;
 }
-  
-input {
-    display: block;
-    width: 100%;
-    max-width: 560px;
-    border: 1px solid var(--secondary-bg-color);
-    border-radius: 5px;
-    margin-bottom: 1rem;
-    padding: 0.4rem 0.8rem;
-}
-  
-button:hover {
-    background-color: var(orange);
-    border: 2px solid var(black);
-}
