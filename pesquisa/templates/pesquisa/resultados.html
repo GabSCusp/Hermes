@@ -1,5 +1,22 @@
 {% extends 'base.html' %}
 
 {%block content%}
-<h1>Olá</h1>
+
+<h2>Resultados da pesquisa:</h2>
+<form action="{% url 'pesquisa' %}">
+    <p>
+        <label for="id_query">Nome:</label>
+        <input type="text" name="query" id="id_query" />
+    </p>
+    <button type="submit">Buscar</button>
+</form>
+
+{% if lista_de_locais %}
+    {% for resultado in lista_de_locais %}
+        <li>{{resultado.nome}}</li>
+    {% endfor %}
+{% else %}
+    <p>Nenhum resultado encontrado</p>
+{% endif %}
+
 {%endblock content%}

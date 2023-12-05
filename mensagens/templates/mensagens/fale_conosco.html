@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+Fale conosco
+{% endblock title %}
+
+{% block content %}
+<h2>Envie sua Mensagem</h2>
+<form method="post" action="{% url 'fale-conosco' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enviar</button>
+</form>
+{% endblock content %}

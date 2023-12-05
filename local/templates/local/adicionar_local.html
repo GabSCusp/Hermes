@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Adicionar Local</h2>
+<form  class="form_geral" method="post" action="{% url 'addlocal' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Adicionar Local</button>
+</form>  
+
+{% endblock content %}

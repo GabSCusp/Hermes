@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Todos os Produtos</h2>
+{% if produto_list %}
+<section class="lista-de-cards">
+  {% for produto in produto_list %}
+  <article class="card">
+    <a href="{% url 'produtos:detail' produto.id %}"
+      ><img src="{{ produto.poster_url }}" alt="Poster do Produto {{ produto.name}}"
+    /></a>
+    <p>{{ produto.name }}</p> 
+    <p>R$ {{ produto.preço }}</p>
+    <p>Local: {{ produto.Local }}</p>
+  </article>
+  {% endfor %}
+</section>
+{% else %}
+<p>Não foi encontrado nenhum Produto.</p>
+{% endif %} {% endblock content %}

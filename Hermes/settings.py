@@ -29,6 +29,9 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'pesquisa.apps.PesquisaConfig',
     'local.apps.LocalConfig',
+    'user.apps.UserConfig',
+    'mensagens.apps.MensagensConfig',
+    'produtos.apps.ProdutosConfig',
 ]
 
 MIDDLEWARE = [
@@ -117,3 +120,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# Configurações de autenticação
+LOGIN_REDIRECT_URL = '/'  # Página para redirecionar após o login ('/' para homepage)
+LOGOUT_REDIRECT_URL = '/'  # Página para redirecionar após o logout ('/' para homepage) 
+

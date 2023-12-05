@@ -18,13 +18,22 @@
         <nav id="navegacao-principal">
             <ul>
                 <li><a href="{%url 'home'%}">Home</a></li>
-                <li><a href="{%url 'home'%}">Buscar</a></li>
+                <li><a href="{%url 'pesquisa'%}">Buscar</a></li>
                 <li><a href="{%url 'home'%}">Favoritos</a></li>
                 <li><a href="{%url 'home'%}">Histórico</a></li>
-                <img class="profile_pic" src="{% static 'profile.png' %}" width='40' height='40'>
+                <li><a href="{%url 'produtos:search'%}">Produtos</a></li>
+                {% if user.is_authenticated %}
+                <a href="{% url 'perfil' %}">
+                    <span>Olá, {{user.username}} !</span>
+                    <img src="{% static 'profile.png' %}" width="40" height="40">
+                </a>    
+                {% else %}
+                <a href="{% url 'login' %}">
+                    <img src="{% static 'profile.png' %}" width="40" height="40">
+                </a>
+                {% endif %}
             </ul>
         </nav>
-
     </header>
     <main id="conteiner-principal">
         {% block content %}
