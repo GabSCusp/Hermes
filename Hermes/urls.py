@@ -8,4 +8,5 @@ urlpatterns = [
     path('',include('local.urls')),
     path('',include('mensagens.urls')),
     path('',include('user.urls')),
+    path('produtos/', include('produtos.urls')),
 ]

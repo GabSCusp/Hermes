@@ -24,7 +24,6 @@ Login de usuário
 {% if form.errors %}
 <p>Sua senha e nome de usuário não correspondem. Tente novamente.</p>
 {% endif %}
-
 {% if next %}
     {% if user.is_authenticated %}
     <p>Sua conta não possui acesso a esta página. Para prosseguir, faça um login com uma conta que tenha.</p>
@@ -33,4 +32,4 @@ Login de usuário
     {% endif %}
 {% endif %}
 
-{% endblock %}
+{% endblock content %}
