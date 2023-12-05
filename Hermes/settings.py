@@ -125,3 +125,6 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = '/'  # Página para redirecionar após o login ('/' para homepage)
 LOGOUT_REDIRECT_URL = '/'  # Página para redirecionar após o logout ('/' para homepage) 
 
+#Cofiguração de mídia
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

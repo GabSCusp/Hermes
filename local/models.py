@@ -8,4 +8,4 @@ class Local(models.Model):
     CEP = models.CharField(null=True, blank=True, max_length=100, name="CEP")
     endereço = models.CharField(null=True, blank=False, max_length=250, name = 'endereço')
     descrição = models.CharField(null=True,max_length=500, name="descrição")
-    imagem = models.ImageField(upload_to='local/imagens_de_locais',null=True, blank=False, name="imagem")
+    imagem = models.ImageField(upload_to='imagens_de_locais/',null=True, blank=False, name="imagem")

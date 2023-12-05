@@ -2,7 +2,6 @@
 
 {%block content%}
 
-<h2>Resultados da pesquisa:</h2>
 <form action="{% url 'pesquisa' %}">
     <p>
         <label for="id_query">Nome:</label>
@@ -12,7 +11,9 @@
 </form>
 
 {% if lista_de_locais %}
+    <h2>Resultados da pesquisa:</h2>
     {% for resultado in lista_de_locais %}
+        <img src="{{ resultado.imagem.url }}" alt="{{ resultado.nome }}">
         <li>{{resultado.nome}}</li>
     {% endfor %}
 {% else %}
