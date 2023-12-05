@@ -4,5 +4,6 @@ from local.models import Local
 class AddLocalForm(forms.ModelForm):
         class Meta:
             model = Local
-            fields = ['nome']
+            fields = ['nome','endereço','descrição','CEP','latitude','longitude','imagem']
             labels = {'nome':'Nome'}
+            widgets = {'descrição':forms.Textarea}
