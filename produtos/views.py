@@ -8,6 +8,7 @@ from django.views import generic
 from .forms import ReviewForm
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import DetailView
+from django.contrib.auth.decorators import login_required
 
 def detail_produto(request, produto_id):
     produto = get_object_or_404(Produto, pk=produto_id)
@@ -49,24 +50,27 @@ def create_produto(request):
     else:
         return render(request, 'produtos/create.html', {})
 
+@login_required
 def create_review(request, produto_id):
     produto = get_object_or_404(Produto, pk=produto_id)
+    
     if request.method == 'POST':
-        form = ReviewForm(request.POST)
+        # Atribuir o usuário autenticado como autor
+        form = ReviewForm(request.POST, initial={'author': request.user.username})
         if form.is_valid():
-            review_author = form.cleaned_data['author']
             review_text = form.cleaned_data['text']
-            review = Review(author=review_author,
+            review = Review(author=request.user,  # Usuário autenticado
                             text=review_text,
                             produto=produto)
             review.save()
             return HttpResponseRedirect(
                 reverse('produtos:detail', args=(produto_id, )))
     else:
-        form = ReviewForm()
+        # Atribuir o usuário autenticado como autor (caso não seja um POST)
+        form = ReviewForm(initial={'author': request.user.username})
+        
     context = {'form': form, 'produto': produto}
     return render(request, 'produtos/review.html', context)
-
 class ListListView(generic.ListView):
     model = List
     template_name = 'produtos/lists.html'
