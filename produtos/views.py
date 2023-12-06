@@ -7,21 +7,23 @@ from django.urls import reverse, reverse_lazy
 from django.views import generic
 from .forms import ReviewForm
 from django.shortcuts import render, get_object_or_404
+from django.views.generic import DetailView
 
 def detail_produto(request, produto_id):
-    produto = Produto.objects.get(pk=produto_id)
+    produto = get_object_or_404(Produto, pk=produto_id)
+    if 'last_viewed' not in request.session:
+        request.session['last_viewed'] = []
+    request.session['last_viewed'] = [produto_id] + request.session['last_viewed']
+    if len(request.session['last_viewed']) > 5:
+        request.session['last_viewed'] = request.session['last_viewed'][:-1]
     context = {'produto': produto}
     return render(request, 'produtos/detail.html', context)
+
 
 def list_produtos(request):
     produto_list = Produto.objects.all()
     context = {"produto_list": produto_list}
     return render(request, 'produtos/Produtos.html', context)
-
-def detail_produto(request, produto_id):
-    produto = get_object_or_404(Produto, pk=produto_id)
-    context = {'produto': produto}
-    return render(request, 'produtos/detail.html', context)
 
 def search_produtos(request):
     context = {}
@@ -76,3 +78,30 @@ class ListCreateView(generic.CreateView):
     fields = ['name', 'author', 'produtos']
     success_url = reverse_lazy('produtos:lists')
 
+class ListDetailView(DetailView):
+    model = List
+    template_name = 'produtos/list_detail.html'  
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+class ProdutoListView(generic.ListView):
+    model = Produto
+    template_name = 'produtos/Produtos.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if 'last_viewed' in self.request.session:
+            unique_produto_ids = set(self.request.session['last_viewed'])
+            context['last_produtos'] = [get_object_or_404(Produto, pk=produto_id) for produto_id in unique_produto_ids]
+        return context
+
+class LastViewedProdutosView(generic.TemplateView):
+    template_name = 'produtos/last_viewed.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if 'last_viewed' in self.request.session:
+            unique_produto_ids = set(self.request.session['last_viewed'])
+            context['last_produtos'] = [get_object_or_404(Produto, pk=produto_id) for produto_id in unique_produto_ids]
+        return context

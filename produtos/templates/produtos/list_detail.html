@@ -1,24 +1,20 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Papelaria
+{{ object.name }}
 {% endblock title %}
 
 {% block content %}
-<h2>Listas de Produtos</h2>
+<h2>{{ object.name }}</h2>
 
 <section>
-    {% for list in list_list %}
     <hr>
     <article>
-        <header>
-            <h3><a href="{% url 'produtos:list-detail' list.id %}">{{ list.name }}</a></h3>
-        </header>
         <div class="lista-de-cards">
-            {% for produto in list.produtos.all %}
+            {% for produto in object.produtos.all %}
             <div class="card">
                 <a href="{% url 'produtos:detail' produto.id %}">
-                    <img src="{{ produto.poster_url }}" alt="Poster do produto {{ produto.name}}">
+                    <img src="{{ produto.poster_url }}" alt="Poster do produto {{ produto.name }}">
                 </a>
                 <p>{{ produto.name }} - {{ produto.preço }} R$</p>
                 <p>{{ produto.Local }}</p>
@@ -26,9 +22,6 @@ Papelaria
             {% endfor %}
         </div>
     </article>
-    {% endfor %}
-
-    
 </section>
 
 {% endblock content %}
