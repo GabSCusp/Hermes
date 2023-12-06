@@ -15,9 +15,11 @@
     <section class="lista-de-cards">
         {% for produto in produto_list %}
             <article class="card">
-                <img src="{{ produto.poster_url }}" alt="Poster do produto {{ produto.name}}">
-                <p>{{ produto.name }} - {{ produto.preço }} R$</p>
-                <p>{{ produto.Local }}</p>
+                <a href="{% url 'produtos:detail' produto.id %}">
+                    <img src="{{ produto.poster_url }}" alt="Poster do produto {{ produto.name}}">
+                    <p>{{ produto.name }} - {{ produto.preço }} R$</p>
+                    <p>{{ produto.Local }}</p>
+                </a>
             </article>
         {% endfor %}
     </section>
