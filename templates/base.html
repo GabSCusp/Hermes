@@ -16,12 +16,11 @@
 <body>
     <header id="cabecalho-principal">
         <nav id="navegacao-principal">
-            <ul>
+            <ul> 
                 <li><a href="{%url 'home'%}">Home</a></li>
-                <li><a href="{%url 'pesquisa'%}">Buscar</a></li>
+                <li><a href="{%url 'produtos:search'%}">Buscar</a></li>
                 <li><a href="{%url 'home'%}">Favoritos</a></li>
-                <li><a href="{%url 'home'%}">Histórico</a></li>
-                <li><a href="{%url 'produtos:search'%}">Produtos</a></li>
+                <li><a href="{%url 'produtos:last_viewed'%}">Histórico</a></li>
                 {% if user.is_authenticated %}
                 <a href="{% url 'perfil' %}">
                     <span>Olá, {{user.username}} !</span>
@@ -47,3 +46,5 @@
 </body>
 
 </html>
+
+

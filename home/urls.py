@@ -1,6 +1,6 @@
 from django.urls import path
-from home.views import HermesHomePage
+from home.views import home_view
 
 urlpatterns = [
-    path('', HermesHomePage.as_view(), name='home')
+    path('', home_view, name='home')
 ]

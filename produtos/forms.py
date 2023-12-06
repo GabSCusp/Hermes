@@ -15,15 +15,9 @@ class ProdutoForm(ModelForm):
             'preço': 'Preço',
             'poster_url': 'URL do Poster',
         }
-
 class ReviewForm(ModelForm):
     class Meta:
         model = Review
-        fields = [
-            'author',
-            'text',
-        ]
-        labels = {
-            'author': 'Usuário',
-            'text': 'Resenha',
-        }
+        fields = ['text']
+        labels = {'text': 'Resenha'}
+

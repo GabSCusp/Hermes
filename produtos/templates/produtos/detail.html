@@ -20,7 +20,7 @@
             {% for review in produto.review_set.all %}
                 <figure>
                     <blockquote>
-                        "{{ review.text }}"
+                        {{ review.text }}
                     </blockquote>
                     <figcaption>—{{ review.author }}</figcaption>
                 </figure>

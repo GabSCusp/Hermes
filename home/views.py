@@ -1,4 +1,6 @@
-from django.views.generic import TemplateView
+from django.shortcuts import render
+from produtos.models import List
 
-class HermesHomePage(TemplateView):
-    template_name = 'home/home.html'
+def home_view(request):
+    listas_disponiveis = List.objects.all()
+    return render(request, 'home/home.html', {'listas_disponiveis': listas_disponiveis})
