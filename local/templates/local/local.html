@@ -1,5 +1,12 @@
 {%extends 'base.html'%}
+<!-- TODO -->
 
 {%block content%}
-Oi
+{% for local in local_list %}
+<a href="{% url 'detalhe_local' pk=local.pk %}">
+    <h2>{{ local.nome }}</h2>
+    <img src="{{ local.imagem.url }}" alt="{{ local.nome }}">
+    <p>{{ local.descrição }}</p>
+</a>
+{% endfor %}
 {%endblock content%}

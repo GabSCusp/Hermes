@@ -1,10 +1,11 @@
 from django.contrib.auth.views import TemplateView
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import get_object_or_404, render, redirect, reverse
 from django.contrib.auth import login, logout
 from django.views.generic.base import View
 from user.forms import RegistroForm
 from django.contrib import messages
 from user.models import PerfilUsuario
+from local.models import Local
 
 def Registrar(request):
     if request.method == 'POST':
@@ -31,4 +32,15 @@ def list_favoritos(request):
         perfil_usuario, created = PerfilUsuario.objects.get_or_create(user=request.user)
         favoritos = perfil_usuario.favoritos.all()
         return render(request, 'user/favoritos.html', {'favoritos':favoritos})
+    return redirect('login')
+
+def add_favoritos(request, id_local):
+    if request.user.is_authenticated:
+        perfil_usuario, created = PerfilUsuario.objects.get_or_create(user=request.user)
+        local = get_object_or_404(Local, id=id_local)
+
+        if local not in perfil_usuario.favoritos.all():
+            perfil_usuario.favoritos.add(local)
+            return redirect('perfil')
+        return redirect('home')
     return redirect('login')

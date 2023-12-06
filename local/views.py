@@ -7,6 +7,11 @@ class LocalListView(generic.ListView):
     template_name = "local/local.html"
     model = Local
 
+class LocalDetailView(generic.DetailView):
+    model = Local
+    template_name = 'local/detalhe_local.html'
+    context_object_name = 'local'
+
 def adicionar_local(request):
     if request.method == "POST":
         form = AddLocalForm(request.POST, request.FILES) 

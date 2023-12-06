@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>{{ local.nome }}</h2>
+<p>{{ local.descricao }}</p>
+<img src="{{ local.imagem.url }}" alt="{{ local.nome }}">
+<a href="{% url 'add_favoritos' local.id %}">Adicionar aos Favoritos</a>
+{% endblock content %}
