@@ -6,6 +6,7 @@ from user.forms import RegistroForm
 from django.contrib import messages
 from user.models import PerfilUsuario
 from local.models import Local
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def Registrar(request):
     if request.method == 'POST':
@@ -19,8 +20,9 @@ def Registrar(request):
     form = RegistroForm()
     return render(request,'user/registro.html',{'form':form})
 
-class UserConfigView(TemplateView):
+class UserConfigView(LoginRequiredMixin, TemplateView):
     template_name = "user/config_page.html"
+    login_url = 'login'
 
 class HermesLogOut(View):
     def get(self, request, *args, **kwargs):
