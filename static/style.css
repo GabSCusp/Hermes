@@ -72,11 +72,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url('{% static "Tela de Fundo.svg" %}');
+  background-image: linear-gradient(0deg, transparent, transparent), ('/static/Tela de Fundo.svg'); /* Substitua o caminho correto */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 
 body,
 body * {
@@ -249,3 +250,6 @@ button:hover {
   display: inline;
 }
 
+.larger-button {
+  width: 200px; 
+}

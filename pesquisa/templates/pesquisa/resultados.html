@@ -1,12 +1,22 @@
 {% extends 'base.html' %}
 
-{%block content%}
+{% block content %}
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    label, input, button {
+        margin-bottom: 10px;
+    }
+</style>
 
 <form action="{% url 'pesquisa' %}">
-    <p>
-        <label for="id_query">Nome:</label>
-        <input type="text" name="query" id="id_query" />
-    </p>
+    <label for="id_query">Nome:</label>
+    <input type="text" name="query" id="id_query" placeholder="Pesquisar Local no Hermes" />
     <button type="submit">Buscar</button>
 </form>
 
@@ -14,10 +24,12 @@
     <h2>Resultados da pesquisa:</h2>
     {% for resultado in lista_de_locais %}
         <img src="{{ resultado.imagem.url }}" alt="{{ resultado.nome }}">
-        <li>{{resultado.nome}}</li>
+        <li>{{ resultado.nome }}</li>
     {% endfor %}
-{% else %}
+{% endif %}
+
+{% if not lista_de_locais and request.GET.query %}
     <p>Nenhum resultado encontrado</p>
 {% endif %}
 
-{%endblock content%}
+{% endblock content %}

@@ -3,10 +3,10 @@
 {% block content %}
 
 <h2>Adicionar Local</h2>
-<form  class="form_geral" method="post" action="{% url 'addlocal' %}" enctype="multipart/form-data">
+<form class="form_geral" method="post" action="{% url 'addlocal' %}" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Adicionar Local</button>
-</form>  
+    <button type="submit" class="larger-button">Adicionar Local</button>
+</form>
 
 {% endblock content %}

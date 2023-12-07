@@ -5,8 +5,8 @@ Locais
 {% endblock title %}
 
 {%block content%}
-<h2>Todos os locais registrados</h2>
-<p>Não encontrou o que procurava? Tente <a href="{% url 'pesquisa' %}">procurar por um local</a></p>
+<h2 >Todos os locais registrados</h2>
+<p class="texto-comum">Não encontrou o que procurava? Tente <a href="{% url 'pesquisa' %}">procurar por um local</a></p>
 {% for local in local_list %}
     <h2>{{ local.nome }}</h2>
     <a href="{% url 'detalhe_local' pk=local.pk %}">
