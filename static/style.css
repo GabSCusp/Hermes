@@ -74,8 +74,10 @@ body {
   flex-direction: column;
   background-size: cover;
   background-position: center;
+  background-image: (0deg, transparent, transparent);  
   background-repeat: no-repeat;
 }
+
 
 body,
 body * {
@@ -246,4 +248,8 @@ button:hover {
 .texto-comum { /* Classe que deixa o fundo Branco*/
   background-color: rgb(255, 255, 255); 
   display: inline;
+}
+
+.larger-button {
+  width: 200px; 
 }
