@@ -1,12 +1,22 @@
 {%extends 'base.html'%}
-<!-- TODO -->
+
+{% block title %}
+Locais
+{% endblock title %}
 
 {%block content%}
+<h2>Todos os locais registrados</h2>
+<p>Não encontrou o que procurava? Tente <a href="{% url 'pesquisa' %}">procurar por um local</a></p>
 {% for local in local_list %}
-<a href="{% url 'detalhe_local' pk=local.pk %}">
     <h2>{{ local.nome }}</h2>
-    <img src="{{ local.imagem.url }}" alt="{{ local.nome }}">
+    <a href="{% url 'detalhe_local' pk=local.pk %}">
+        <img src="{{ local.imagem.url }}" alt="{{ local.nome }}">
+    </a>
     <p>{{ local.descrição }}</p>
-</a>
+    {% if local.status %}
+        <p>verificado</p>
+    {% else %}
+        <p>não verificado</p>
+    {% endif %}
 {% endfor %}
 {%endblock content%}

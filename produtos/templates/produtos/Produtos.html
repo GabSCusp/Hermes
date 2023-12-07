@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <h2>Todos os Produtos</h2>
+<p>Não encontrou o que queria? Tente <a href="{% url 'produtos:search' %}">procurar por um produto</a></p>
 {% if produto_list %}
 <section class="lista-de-cards">
   {% for produto in produto_list %}

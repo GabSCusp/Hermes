@@ -18,8 +18,6 @@
             background-position: center;
             background-repeat: no-repeat;
         }
-
-        /* Adicione estilos adicionais conforme necessário */
     </style>
 </head>
 
@@ -28,8 +26,8 @@
         <nav id="navegacao-principal">
             <ul> 
                 <li><a href="{%url 'home'%}">Home</a></li>
-                <li><a href="{%url 'produtos:search'%}">Buscar produtos</a></li>
-                <li><a href="{%url 'pesquisa'%}">Busacar locais</a></li>
+                <li><a href="{%url 'produtos:Produtos'%}">Produtos</a></li>
+                <li><a href="{%url 'local'%}">Locais</a></li>
                 <li><a href="{%url 'produtos:last_viewed'%}">Histórico</a></li>
                 {% if user.is_authenticated %}
                 <a href="{% url 'perfil' %}">
