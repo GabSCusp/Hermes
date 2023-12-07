@@ -7,7 +7,7 @@ class ProdutoForm(ModelForm):
         fields = [
             'name',
             'preço',
-            'Local',
+            'local',
             'poster_url',
         ]
         labels = {

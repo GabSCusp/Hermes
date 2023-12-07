@@ -6,7 +6,11 @@
       <ul>
         <li>Nome: {{ produto.name }}</li>
         <li>Preço: {{ produto.preço }} R$ </li>
-        <li>Local: {{produto.Local }}</li>
+        {% if local %}
+            <li>Disponível em: {{local.nome}}</li>
+        {% else %}    
+            <li>Produto indisponível</li>
+        {% endif %}
       </ul>
     </section>
     <hr>

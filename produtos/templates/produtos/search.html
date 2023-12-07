@@ -17,9 +17,9 @@
             <article class="card">
                 <a href="{% url 'produtos:detail' produto.id %}">
                     <img src="{{ produto.poster_url }}" alt="Poster do produto {{ produto.name}}">
-                    <p>{{ produto.name }} - {{ produto.preço }} R$</p>
-                    <p>{{ produto.Local }}</p>
                 </a>
+                    <p>{{ produto.name }} - {{ produto.preço }} R$</p>
+                    <p>{{ produto.local.nome }}</p>
             </article>
         {% endfor %}
     </section>
