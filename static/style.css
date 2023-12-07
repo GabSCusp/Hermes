@@ -1,91 +1,114 @@
+:root {
+  --primary-color: #000000;
+  --secondary-color: #eeba11; /*botões*/
+  --tertiary-color: #f44d27;
+  --secondary-color-light: #ffeb55; /*botões*/
+  --tertiary-color-light: #ff6d28;
+  --bg-color: #110101; /*texto*/
+  --secondary-bg-color: #050101;
+  --color-shadow: #f4f4f4;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica;
+  box-sizing: border-box;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica;
 }
 
 header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 20px 50px;
-    box-shadow: 0 1px 8px #ddd;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 50px;
+  box-shadow: 0 1px 8px #b1b1b1;
+  background-color: rgb(255, 175, 4); /* Substitua pela cor desejada */
 }
 
 @media (max-width: 768px) {
-    header {
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
-    }
+  header {
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+  }
 }
 
 header h1 {
-    font-size: 1.5em;
-    display: inline-block;
-    margin-right: 670px;
+  font-size: 1.5em;
+  display: inline-block;
+  margin-right: 670px;
 }
 
 header li {
-    justify-content: flex-end;
-    list-style: none;
-    display: inline-block;
-    padding: 0 20px;
+  justify-content: flex-end;
+  list-style: none;
+  display: inline-block;
+  padding: 0 20px;
 
 }
 
 header a {
-    text-decoration: none;
-    color: #555;
+  text-decoration: none;
+  color: #000000;
 }
 
 header a:hover {
-    color: #b2dfdb;
+  color: #ffffff; /*Cor do texto do cabeçalho */
 }
 
 h2{
-    display: flex;
-    justify-content: center;
-    padding: 50px;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
 }
 
 body{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url('{% static "Tela de Fundo.svg" %}');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 footer{
-    margin-top: auto;
-    text-align: center;
+  margin-top: auto;
+  text-align: center;
 }
 
 /* Formulários */
 
 .form_login{
-    position: relative;
-    z-index: 2;
-    display: inline-block;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
 }
 
 .form-login{
-    max-width: 300px;
-    margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 2;
+  max-width: 300px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
 }
 
 .form_geral p{
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .principal_login{
-    text-align: center;
-    margin-top: 1px;
-    position: relative;
+  text-align: center;
+  margin-top: 1px;
+  position: relative;
 }
 
 /* ---------- */
@@ -93,92 +116,106 @@ footer{
 /* Imagens */
 
 .Hermes_logo{
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-    width: 300; 
-    height: 300;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  width: 300; 
+  height: 300;
 }
 
 .USP_logo{
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-    width: 350; 
-    height: 300;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  width: 350; 
+  height: 300;
 }
 
-/* ---- */
-
-/* Botões */
-
-.cadbotao p{
-    position: relative;
-    z-index: 2;
-}
-
-.recbotao p{
-    position: relative;
-    z-index: 2;
-}
-
-button{
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* --- */
 
 .lista-de-cards {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
-  
+
 .card {
-    border: 1px solid var(--secondary-bg-color);
-    border-radius: 5px;
-    box-shadow: 2px 2px 10px var(--color-shadow);
-    margin: 1rem;
-    padding: 1.25rem;
-    width: 285px;
+  border: 1px solid var(--secondary-bg-color);
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px var(--color-shadow);
+  margin: 1rem;
+  padding: 1.25rem;
+  width: 285px;
 }
-  
+
 .small-card {
-    border: 1px solid var(--secondary-bg-color);
-    border-radius: 5px;
-    box-shadow: 2px 2px 10px var(--color-shadow);
-    margin: 1rem;
-    padding: 1.25rem;
-    width: 160px;
+  border: 1px solid var(--secondary-bg-color);
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px var(--color-shadow);
+  margin: 1rem;
+  padding: 1.25rem;
+  width: 160px;
 }
-  
+
 .card img {
-    width: 100%;
+  width: 100%;
 }
-  
+
 .small-card img {
-    width: 100%;
+  width: 100%;
 }
-  
+
 .dados-de-produto {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-    padding: 1rem 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  padding: 1rem 0;
 }
-  
+
 .dados-de-produto img {
-    width: 285px;
-    box-shadow: 2px 2px 10px var(--color-shadow);
+  width: 285px;
+  box-shadow: 2px 2px 10px var(--color-shadow);
 }
-  
+
 .dados-de-produto ul {
-    list-style-type: none;
+  list-style-type: none;
+}
+
+input {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  border: 2px solid var(--secondary-bg-color);
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  padding: 0.4rem 0.8rem;
+}
+
+button {
+  background-color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  color: var(--bg-color);
+  border-radius: 35px;
+  display: inline-block;
+  font-size: medium;
+  font-weight: bold;
+  margin: 0.5rem 0.5rem;
+  padding: 1rem 2rem;
+  width: 150px; /* Defina a largura desejada */
+  height: 40px; /* Defina a altura desejada */
+  text-align: center; /* Centralizar texto horizontalmente */
+  line-height: 10px; /* Igual à altura do botão para centralizar verticalmente */
+
+}
+
+button img {
+  width: 40px; /* Largura da imagem */
+  height: 40px; /* Altura da imagem */
+  margin-right: 5px; /* Espaço entre a imagem e o texto */
+}
+
+button:hover {
+  background-color: var(--secondary-color-light);
+  border: 2px solid var(--secondary-color-light);
 }
