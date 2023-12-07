@@ -1,32 +1,36 @@
 {% extends 'base.html' %}
-
+{% block title %}
+Buscar
+{% endblock title %}
 {% block content %}
-<h2></h2>
-<form action="{% url 'produtos:search' %}">
-    <p>
-        <label for="id_query">Título:</label>
-        <input type="text" name="query" id="id_query" />
-    </p>
-    <button type="submit">Buscar</button>
-</form>
+  <div class="pagina-busca">
+    <h2>Encontre seu Produto</h2>
+    <form action="{% url 'produtos:search' %}">
+      <p>
+        <label for="id_query"></label>
+        <input type="text" name="query" id="id_query" placeholder="Pesquisar no Hermes" />
+      </p>
+      <button type="submit">Buscar</button>
+    </form>
+  </div>
 
-{% if produto_list %}
+  {% if produto_list %}
     <h2>Resultado da Busca</h2>
-    <section class="lista-de-cards">
-        {% for produto in produto_list %}
-            <article class="card">
-                <a href="{% url 'produtos:detail' produto.id %}">
-                    <img src="{{ produto.poster_url }}" alt="Poster do produto {{ produto.name}}">
-                    <p>{{ produto.name }} - {{ produto.preço }} R$</p>
-                    <p>{{ produto.Local }}</p>
-                </a>
-            </article>
-        {% endfor %}
+    <section class="lista-de-cards text-bg">
+      {% for produto in produto_list %}
+        <article class="card">
+          <a href="{% url 'produtos:detail' produto.id %}">
+            <img src="{{ produto.poster_url }}" alt="Poster do produto {{ produto.name}}">
+            <p>{{ produto.name }} - {{ produto.preço }} R$</p>
+            <p>{{ produto.Local }}</p>
+          </a>
+        </article>
+      {% endfor %}
     </section>
-{% else %}
+  {% else %}
     {% if request.GET.query %}
-        <p>Não foi encontrado um resultado para a sua busca.</p>
+      <p>Não foi encontrado um resultado para a sua busca.</p>
     {% endif %}
-{% endif %}
+  {% endif %}
 
 {% endblock content %}
