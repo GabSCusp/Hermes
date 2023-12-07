@@ -72,7 +72,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url('{% static "Tela de Fundo.svg" %}');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
