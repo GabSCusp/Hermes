@@ -17,7 +17,7 @@
                     <img src="{{ produto.poster_url }}" alt="Poster do produto {{ produto.name }}">
                 </a>
                 <p>{{ produto.name }} - {{ produto.preço }} R$</p>
-                <p>{{ produto.Local }}</p>
+                <p>{{ produto.local.nome }}</p>
             </div>
             {% endfor %}
         </div>

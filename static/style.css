@@ -28,7 +28,7 @@ header {
   align-items: center;
   padding: 20px 50px;
   box-shadow: 0 1px 8px #b1b1b1;
-  background-color: rgb(255, 175, 4); 
+  background-color: rgb(255, 175, 4); /* Substitua pela cor desejada */
 }
 
 @media (max-width: 768px) {

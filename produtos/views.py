@@ -19,7 +19,8 @@ def detail_produto(request, produto_id):
         request.session['last_viewed'] = [produto_id] + request.session['last_viewed']
         if len(request.session['last_viewed']) > 5:
             request.session['last_viewed'] = request.session['last_viewed'][:-1]
-        context = {'produto': produto}
+        local = produto.local
+        context = {'produto': produto ,'local': local}
         return render(request, 'produtos/detail.html', context)
     return redirect('login')
 
@@ -46,11 +47,11 @@ def create_produto(request):
     if request.method == 'POST':
         produto_name = request.POST['name']
         produto_preço = request.POST['preço']
-        produto_Local = request.POST['Local']
+        produto_local = request.POST['local']
         produto_poster_url = request.POST['poster_url']
         produto = Produto(name=produto_name,
                       preço=produto_preço,
-                      Local=produto_Local,
+                      local=produto_local,
                       poster_url=produto_poster_url)
         produto.save()
         return HttpResponseRedirect(
