@@ -4,7 +4,7 @@
   --tertiary-color: #f44d27;
   --secondary-color-light: #ffeb55; /*botões*/
   --tertiary-color-light: #ff6d28;
-  --bg-color: #110101; /*texto*/
+  --bg-color: #000000; /*texto*/
   --secondary-bg-color: #050101;
   --color-shadow: #f4f4f4;
   font-size: 16px;
@@ -12,10 +12,14 @@
 }
 
 * {
+  box-sizing: border-box;
+}
+
+
+* {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica;
-  box-sizing: border-box;
 }
 
 header {
@@ -64,14 +68,21 @@ h2{
   padding: 50px;
 }
 
-body{
+body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-image: url('{% static "Tela de Fundo.svg" %}');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
+body,
+body * {
+  color: var(--bg-color);
+}
+
 
 footer{
   margin-top: auto;
@@ -141,6 +152,7 @@ footer{
   margin: 1rem;
   padding: 1.25rem;
   width: 285px;
+  background-color: #ffffff;
 }
 
 .small-card {
@@ -213,4 +225,21 @@ button img {
 button:hover {
   background-color: var(--secondary-color-light);
   border: 2px solid var(--secondary-color-light);
+}
+
+.pagina-busca {
+  text-align: center;
+}
+
+.pagina-busca h2 {
+  margin-bottom: 0;
+}
+
+.pagina-busca form {
+  display: inline-block;
+}
+
+.pagina-busca input {
+  width: 500px;
+  padding: 8px;
 }
