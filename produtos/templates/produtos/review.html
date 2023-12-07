@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Comentar  {{ produto.name }} </h2>
+<div class="texto-comum">
+  <h2>Comentar {{ produto.name }}</h2>
 
-<form action="{% url 'produtos:review' produto.id %}" method="post">
+  <form action="{% url 'produtos:review' produto.id %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Postar</button>
-</form>
+  </form>
 
-<p><a href="{% url 'produtos:detail' produto.id %}">Voltar para a página do Produto</a></p>
+  <p><a href="{% url 'produtos:detail' produto.id %}">Voltar para a página do Produto</a></p>
+</div>
 {% endblock content %}
