@@ -5,15 +5,56 @@ Página Inicial
 {% endblock title %}
 
 {% block content %}
+{% load static %}
+
+<style>
+  .categoria-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Mudança para alinhar verticalmente */
+    margin-bottom: 20px; /* Aumenta o espaçamento entre os itens */
+  }
+
+  .categoria-item img {
+    margin-bottom: 10px;  /* Ajuste a margem conforme necessário */
+    width: 60px; /* Aumenta a largura da imagem em 10px */
+    height: 60px; /* Aumenta a altura da imagem em 10px */
+  }
+
+  .categoria-item button {
+    border-radius: 35px;
+    font-size: medium;
+    font-weight: bold;
+    margin: 0.5rem 0.5rem;
+    padding: 1rem 2rem;
+    width: 160px; /* Aumenta a largura do botão em 10px */
+    height: 60px; /* Aumenta a altura do botão em 10px */
+    text-align: center;
+  }
+</style>
+
 <h2>Bem-vindo à Página Inicial</h2>
 
 {% if listas_disponiveis %}
-<div class="categorias">
+  <div class="categorias">
     {% for lista in listas_disponiveis %}
-        <form method="get" action="{% url 'produtos:list-detail' lista.id %}">
-            <button type="submit">{{lista.name}}</button>
-        </form>
+      <form method="get" action="{% url 'produtos:list-detail' lista.id %}">
+        <div class="categoria-item">
+          <a href="{% url 'produtos:list-detail' lista.id %}">
+            {% if lista.name == 'Papelaria' %}
+              <img src="{% static 'Papelaria.png' %}" alt="{{ lista.name }}">
+            {% elif lista.name == 'Alimentação' %}
+              <img src="{% static 'Alimentação.png' %}" alt="{{ lista.name }}">
+            {% elif lista.name == 'Eletrônicos' %}
+              <img src="{% static 'Eletronicos.png' %}" alt="{{ lista.name }}">
+            {% elif lista.name == 'Vestimenta' %}
+              <img src="{% static 'Vestimentas.png' %}" alt="{{ lista.name }}">
+            {% endif %}
+          </a>
+          <button type="submit">{{ lista.name }}</button>
+        </div>
+      </form>
     {% endfor %}
-</div>
+  </div>
 {% endif %}
 {% endblock content %}
