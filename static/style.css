@@ -156,6 +156,29 @@ footer{
   background-color: #ffffff;
 }
 
+.from_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card_form button {
+  margin: 0 auto; 
+  display: block; 
+}
+
+.card_form {
+  border: 1px solid var(--secondary-bg-color);
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px var(--color-shadow);
+  margin: 1rem;
+  padding: 1.25rem;
+  width: 500px;
+  background-color: #ffffff;
+}
+
 .small-card {
   border: 1px solid var(--secondary-bg-color);
   border-radius: 5px;
