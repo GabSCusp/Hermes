@@ -1,9 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container-local-detail">
+    <div class="local-card-detail"> 
+        <h2>{{ local.nome }}</h2>
+        <img src="{{ local.imagem.url }}" alt="{{ local.nome }}">
+        <p>Descrição: {{ local.descrição }}</p>
 
-<h2>{{ local.nome }}</h2>
-<p>{{ local.descricao }}</p>
-<img src="{{ local.imagem.url }}" alt="{{ local.nome }}">
-<a href="{% url 'add_favoritos' local.id %}">Adicionar aos Favoritos</a>
+        {% if local.CEP %}
+            <p>CEP do local: {{local.CEP}}</p>
+        {% endif %}
+
+        {% if local.endereço %}
+            <p>Endereço: {{local.endereço}}</p>
+        {% endif %}
+
+        {% if local.latitude %}
+            <p>Latitude: {{local.latitude}}</p>
+        {% endif %}
+
+        {% if local.longitude %}
+            <p>Longitude: {{local.longitude}}</p>
+        {% endif %}
+
+        {% if local.status %}
+            <p>Verificado ✓</p>
+        {% else %}
+            <p>Não verificado ✗</p>
+        {% endif %}
+
+        <a class="add_fav_button" href="{% url 'add_favoritos' local.id %}">Adicionar aos Favoritos</a>
+    </div>
+</div>
 {% endblock content %}

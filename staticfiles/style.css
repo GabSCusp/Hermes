@@ -214,6 +214,7 @@ button {
   height: 40px; /* Defina a altura desejada */
   text-align: center; /* Centralizar texto horizontalmente */
   line-height: 10px; /* Igual à altura do botão para centralizar verticalmente */
+  transition: background-color 0.3s ease;
 
 }
 

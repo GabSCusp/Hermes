@@ -8,7 +8,19 @@ Locais favoritos
 
 {% if favoritos %}
     {% for favorito in favoritos %}
-        {{favorito.nome}}<br>
+    <div class="card-container">
+        <div class="local-card">
+        <h2>{{ favorito.nome }}</h2>
+        <a href="{% url 'detalhe_local' pk=favorito.pk %}">
+            <img src="{{ favorito.imagem.url }}" alt="{{ favorito.nome }}">
+        </a>
+        <p>{{ favorito.descrição }}</p>
+        {% if favorito.status %}
+            <p>verificado ✓</p>
+        {% else %}
+            <p>não verificado ✗</p>
+        {% endif %}
+        </div>
     {% endfor %}
 {% endif %}
 
