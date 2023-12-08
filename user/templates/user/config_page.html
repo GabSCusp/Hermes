@@ -7,11 +7,25 @@ Perfil de usuário
 
 {% block content %}
 
+<div class="user-info">
+    <img src="{% static 'profile.png' %}" width="40" height="40">
+    {{user.username}}
+</div>
+<div class="user-opt">
+    <ul class="user-links-container">
+        <li><a href="{% url 'addlocal' %}">Adicionar local</a></li>
+        <li><a href="{% url 'favoritos' %}">Locais favoritos</a></li>
+        <li><a href="{% url 'fale-conosco' %}">Fale conosco</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+=======
 <div class="user-opt">
         <a class="config-button" href="{% url 'addlocal' %}">Adicionar local</a>
         <a class="config-button" href="{% url 'favoritos' %}">Locais favoritos</a>
         <a class="config-button" href="{% url 'fale-conosco' %}">Fale conosco</a>
         <a class="config-button" href="{% url 'logout' %}">Logout</a>
+>>>>>>> a68cf2d52b59bc99a259f3bd1352aac1cdfcedda
 </div>
-
+<img src="{% static 'profile.png' %}" width="40" height="40">
+<div class="user-name">{{ user.username }}</div>
 {% endblock content %}
