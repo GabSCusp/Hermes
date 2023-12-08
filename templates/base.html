@@ -22,13 +22,14 @@
     <header id="cabecalho-principal">
         <nav id="navegacao-principal">
             <ul> 
+                <img id="logo" src="{% static 'UspLogoPNG.png' %}" height="50">
                 <li><a href="{%url 'home'%}">Home</a></li>
                 <li><a href="{%url 'produtos:Produtos'%}">Produtos</a></li>
                 <li><a href="{%url 'local'%}">Locais</a></li>
                 <li><a href="{%url 'produtos:last_viewed'%}">Histórico</a></li>
                 {% if user.is_authenticated %}
+                <span>Olá, {{user.username}} !</span>
                 <a href="{% url 'perfil' %}">
-                    <span>Olá, {{user.username}} !</span>
                     <img src="{% static 'profile.png' %}" width="40" height="40">
                 </a>    
                 {% else %}
