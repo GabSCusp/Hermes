@@ -253,3 +253,30 @@ button:hover {
 .larger-button {
   width: 200px; 
 }
+
+.user-links-container {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  margin-top: -10;
+}
+
+.user-links-container li {
+  margin-right: -5px;
+}
+
+.user-links-container a {
+  text-decoration: none;
+  color: black;
+  padding: 7px;
+  border: 1px solid #cccccc00;
+  border-radius: 0px;
+  transition: background-color 0.3s ease;
+  background-color: orange;
+}
+
+.user-links-container a:hover {
+  background-color: #ff7300;
+}
+
