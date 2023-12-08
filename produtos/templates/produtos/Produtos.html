@@ -3,7 +3,7 @@
 {% block content %}
 <div class="texto-comum">
   <h2>Todos os Produtos</h2>
-  <p>Não encontrou o que queria? Tente <a href="{% url 'produtos:search' %}">procurar por um produto</a></p>
+  <p class="sugere-pesquisa">Não encontrou o que queria? Tente <a href="{% url 'produtos:search' %}">procurar por um produto</a></p>
   {% if produto_list %}
   <section class="lista-de-cards">
     {% for produto in produto_list %}

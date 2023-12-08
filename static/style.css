@@ -196,6 +196,50 @@ footer{
   width: 100%;
 }
 
+.local-card {
+    border: 1px solid var(--secondary-bg-color);
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px var(--color-shadow);
+    margin: 1rem;
+    padding: 1.25rem;
+    width: 300px; 
+    background-color: #ffffff;
+    text-align: center; 
+}
+
+.local-card img {
+    max-width: 100%; 
+    height: auto;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.local-card-detail {
+    border: 1px solid var(--secondary-bg-color);
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px var(--color-shadow);
+    margin: 1rem;
+    padding: 1.25rem;
+    width: 600px; 
+    background-color: #ffffff;
+    text-align: center; 
+}
+
+.local-card-detail img {
+    max-width: 100%; 
+    height: auto;
+}
+
+.container-local-detail {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
 .dados-de-produto {
   width: 100%;
   display: flex;
@@ -273,6 +317,32 @@ button:hover {
   display: inline;
 }
 
+.sugere-pesquisa {
+    text-align: center;
+}
+
 .larger-button {
   width: 200px; 
+}
+
+.add_fav_button {
+  background-color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  color: var(--bg-color);
+  border-radius: 35px;
+  display: inline-block;
+  font-size: medium;
+  font-weight: bold;
+  margin: 0.5rem 0.5rem;
+  padding: 1rem 2rem;
+  width: 251px; /* Defina a largura desejada */
+  height: 40px; /* Defina a altura desejada */
+  text-align: center; /* Centralizar texto horizontalmente */
+  line-height: 10px; /* Igual à altura do botão para centralizar verticalmente */
+
+}
+
+.add_fav_button:hover {
+  background-color: var(--secondary-color-light);
+  border: 2px solid var(--secondary-color-light);
 }
