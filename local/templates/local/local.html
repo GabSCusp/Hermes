@@ -8,6 +8,7 @@ Locais
 <h2 >Todos os locais registrados</h2>
 <p class="sugere-pesquisa">Não encontrou o que procurava? Tente <a href="{% url 'pesquisa' %}">procurar por um local</a></p>
 {% for local in local_list %}
+{% if not local.soft_delete %}
     <div class="card-container">
         <div class="local-card">
         <h2>{{ local.nome }}</h2>
@@ -22,5 +23,6 @@ Locais
         {% endif %}
         </div>
     </div>
+{% endif %}
 {% endfor %}
 {%endblock content%}

@@ -9,3 +9,5 @@ class Local(models.Model):
     endereço = models.CharField(null=True, blank=False, max_length=250, name = 'endereço')
     descrição = models.CharField(null=True,max_length=500, name="descrição")
     imagem = models.ImageField(upload_to='imagens_de_locais/',null=True, blank=False, name="imagem")
+    soft_delete = models.BooleanField(null=False, default=False)
+    produtos = models.ManyToManyField('produtos.Produto', null=True, blank=True, related_name="produtos_do_local")

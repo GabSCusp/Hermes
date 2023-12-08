@@ -23,6 +23,13 @@
             <p>Longitude: {{local.longitude}}</p>
         {% endif %}
 
+        <br>
+        <p>Produtos disponíveis:</p>
+        {% for produto in local.produtos.all %}
+            <p>{{ produto.name }}</p>
+        {% endfor %}
+        <br>
+
         {% if local.status %}
             <p>Verificado ✓</p>
         {% else %}
